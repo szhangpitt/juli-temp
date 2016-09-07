@@ -8,7 +8,7 @@ var fns = [
 
 function runAll (fns) {
     return fns.map(function (fn) {
-       return fn.code.call();
+       return fn.call();
     });
 }
 
@@ -22,11 +22,15 @@ function runAllDelay(fns, delay) {
         }
 
         fn = fns[counter];
-        fn.code.call();
+        fn.call();
         counter += 1;
     }, delay);
 }
 
-runAll(fns);
+function getCode (fnObj) {
+    return fnObj.code;
+}
 
-runAllDelay(fns, 1000);
+runAll(fns.map(getCode));
+
+runAllDelay(fns.map(getCode), 1000);
