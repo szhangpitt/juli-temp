@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>tic tac toe</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body ng-app="ttt">
+    <div ng-controller="BoardController">
+        <h1 ng-bind="message"></h1>
+        <h2 ng-if="winning"
+            ng-bind="winning"></h2>
+        <div class="t-board">
+
+            <!-- <div class="t-row"
+                 ng-repeat="x in pl.xos track by $index">
+
+                <div class="t-col"
+                     xy="{{$parent.$index + ', ' + $index}}"
+                     ng-repeat="y in x track by $index"
+                     ng-click="$parent.place($parent.$index, $index)"
+                     ng-bind="pl.xos[$parent.$index][$index] | toXO">
+
+                </div>
+            </div> -->
+
+
+
+            <div class="t-row">
+                <div class="t-col" ng-click="place(0, 0)"
+                     ng-bind="pl.xos[0][0] | toXO"></div>
+                <div class="t-col" ng-click="place(0, 1)"
+                     ng-bind="pl.xos[0][1] | toXO"></div>
+                <div class="t-col" ng-click="place(0, 2)"
+                     ng-bind="pl.xos[0][2] | toXO"></div>
+            </div>
+            <div class="t-row">
+                <div class="t-col" ng-click="place(1, 0)"
+                     ng-bind="pl.xos[1][0] | toXO"></div>
+                <div class="t-col" ng-click="place(1, 1)"
+                     ng-bind="pl.xos[1][1] | toXO"></div>
+                <div class="t-col" ng-click="place(1, 2)"
+                     ng-bind="pl.xos[1][2] | toXO"></div>
+            </div>
+            <div class="t-row">
+                <div class="t-col" ng-click="place(2, 0)"
+                     ng-bind="pl.xos[2][0] | toXO"></div>
+                <div class="t-col" ng-click="place(2, 1)"
+                     ng-bind="pl.xos[2][1] | toXO"></div>
+                <div class="t-col" ng-click="place(2, 2)"
+                     ng-bind="pl.xos[2][2] | toXO"></div>
+            </div>
+        </div>
+        <div>
+            <button ng-click="clear()">Clear</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

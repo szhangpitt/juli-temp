@@ -1,0 +1,22 @@
+.t-board {
+    display: inline-block;
+    border-right: red 1px solid;
+    border-bottom: red 1px solid;
+}
+
+.t-row {
+    overflow: auto;
+    height: 100px;
+}
+
+.t-col {
+    line-height: 100px;
+    text-align: center;
+    font-size: 48px;
+
+    float: left;
+    width: 100px;
+    height: 99px;
+    border-left: red 1px solid;
+    border-top: red 1px solid;
+}
